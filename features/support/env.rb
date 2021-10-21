@@ -3,7 +3,7 @@ require 'selenium/webdriver'
 require 'rspec'
 
 
-Capybara.register_driver :chrome do |app|
+Capybara.register_driver :selenium do |app|
   Capybara::Selenium::Driver.new(app, :browser => :selenium)
 end
 
