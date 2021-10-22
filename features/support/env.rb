@@ -3,13 +3,13 @@ require 'selenium/webdriver'
 require 'rspec'
 
 
-Capybara.register_driver :selenium do |app|
-  Capybara::Selenium::Driver.new(app, :browser => :selenium)
+Capybara.register_driver :dev do |app|
+  Capybara::Selenium::Driver.new(app, browser: :firefox)
 end
 
 Capybara.configure do |config|
   config.run_server = false
-  config.default_driver = :selenium
+  config.default_driver = :dev
   config.default_max_wait_time = 30
 end
 
