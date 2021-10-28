@@ -10,7 +10,6 @@ Before do |scenario|
   set_subtitle_start if $step_index < $stop_count
   sleep 2
   set_subtitle_finish scenario.name
-  puts scenario.feature.name
   set_subtitle_start if $step_index < $stop_count
 end
 
