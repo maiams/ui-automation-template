@@ -1,0 +1,16 @@
+## YAML Template for cucumber
+---
+default: --publish-quiet -p pretty -p html -p junit -p json -p headless -p qa
+
+pretty: --format pretty
+ci:  --format progress
+
+html:  --format html --out=results/report.html
+json:  --format json --out=results/report.json
+junit: --format junit --out=results/
+
+qa:  ENVIRONMENT_TYPE=qa
+cicd:  ENVIRONMENT_TYPE=cicd
+
+headless:  HEADLESS=headless
+no_headless:  HEADLESS=no_headless

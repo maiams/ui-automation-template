@@ -1,8 +1,0 @@
----
-qa:
-  url: http://google.com.br
-  query: acrelec
-  session_timeout: 30
-  browser: firefox
-  screen_size: 1920x1080
-  timezone: America/Sao_Paulo

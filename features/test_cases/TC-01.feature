@@ -1,5 +1,6 @@
 #language: pt
 
+@screenshot
 Funcionalidade: Caso de teste de exemplo
   Como estudante de testes automatizados,
   Eu quero aprender a utilizar os principais comandos do Capybara
