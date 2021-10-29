@@ -11,3 +11,10 @@ Funcionalidade: Caso de teste de exemplo
     Dado O usuário acessa o site "https://www.google.com.br"
     Quando O usuário digita "GSW" na caixa de pesquisas e pressiona o botão ENTER no teclado
     Então O usuário deve visualizar resultados da busca apontando para o site "http://www.gsw.com.br"
+
+  @facebook
+  Cenário: Acessar o Facebook e causar muito
+    Dado O usuário acessa o site "https://fb.com"
+    E O usuário se autentica no sistema
+    Quando O usuário escrever uma publicação com o texto "oi mundo"
+    Então A publicação deve aparecer no feed de notícias do Facebook

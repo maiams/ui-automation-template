@@ -10,3 +10,19 @@ end
 Então('O usuário deve visualizar resultados da busca apontando para o site {string}') do |resultado|
   expect(page).to have_content resultado
 end
+
+Dado('O usuário se autentica no sistema') do
+  fill_in 'email', with: 'maiams@msn.com'
+  fill_in 'pass', with: "*******"
+  find('login').click
+end
+
+Quando('O usuário escrever uma publicação com o texto {string}') do |texto|
+  find(:xpath, "//span[contains(text(),'No que você está pensando, Ricardo?')]").click
+  fill_in :xpath, "//div[@class='_1mf _1mj']", with: texto
+  find(:xpath, "//span[contains(text(),'Publicar')]").click
+end
+
+Então('A publicação deve aparecer no feed de notícias do Facebook') do
+  pending
+end
