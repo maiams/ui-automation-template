@@ -22,7 +22,7 @@ end
 
 Capybara.configure do |config|
   config.run_server = false
-  config.default_driver = :dev
+  config.default_driver = :remote
   config.default_max_wait_time = 10
 end
 
@@ -33,7 +33,7 @@ rescue NoMethodError
 end
 
 @scenario = nil
-FileUtils.mkdir_p "/docker-grid-selenium4/assets/#{$session_id}/" unless $session_id.is_a? NilClass
+FileUtils.mkdir_p "./docker-grid-selenium4/assets/#{$session_id}/" unless $session_id.is_a? NilClass
 
 #Maximize window.
 Capybara.current_session.driver.browser.manage.window.maximize
@@ -44,16 +44,15 @@ Capybara.current_session.driver.browser.manage.window.maximize
 
 '''EXTRA CONFIG FOR SUBTITLE'''
 def set_subtitle_start
-  exit unless $session_id.is_a? NilClass
+  exit if $session_id.is_a? NilClass
   $time_0 = Process.clock_gettime(Process::CLOCK_MONOTONIC)
   sleep 0.1
 end
 
 def set_subtitle_finish(text)
-  exit unless $session_id.is_a? NilClass
+  exit if $session_id.is_a? NilClass
   sleep 0.1
   $subtitle_path = "./docker-grid-selenium4/assets/#{$session_id}/video.srt"
-
 
   $time_1 = Process.clock_gettime(Process::CLOCK_MONOTONIC)
   s0 = Time.at($time_0 - $time_reference_begin).utc.strftime("%k:%M:%S,%L")

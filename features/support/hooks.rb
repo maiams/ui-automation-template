@@ -14,7 +14,7 @@ Before do |scenario|
 end
 
 After do |scenario|
-  sleep(2)
+  sleep 2
   $time_reference_end = Process.clock_gettime(Process::CLOCK_MONOTONIC)
 end
 
