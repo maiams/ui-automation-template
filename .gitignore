@@ -57,3 +57,6 @@ build-iPhoneSimulator/
 
 /.idea/*
 /Gemfile.lock
+/results/*
+
+/docker-grid-selenium4/assets/*
