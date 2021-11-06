@@ -2,6 +2,10 @@ require 'capybara/cucumber'
 require 'selenium/webdriver'
 require 'rspec'
 require 'fileutils'
+require 'site_prism'
+require 'tiny_tds'
+
+ROOT_PATH = '../../'
 
 Capybara.register_driver :remote do |app|
   Capybara::Selenium::Driver.new(app,
@@ -22,7 +26,7 @@ end
 
 Capybara.configure do |config|
   config.run_server = false
-  config.default_driver = :remote
+  config.default_driver = :dev
   config.default_max_wait_time = 10
 end
 
@@ -44,13 +48,13 @@ Capybara.current_session.driver.browser.manage.window.maximize
 
 '''EXTRA CONFIG FOR SUBTITLE'''
 def set_subtitle_start
-  exit if $session_id.is_a? NilClass
+  return if $session_id.is_a? NilClass
   $time_0 = Process.clock_gettime(Process::CLOCK_MONOTONIC)
   sleep 0.1
 end
 
 def set_subtitle_finish(text)
-  exit if $session_id.is_a? NilClass
+  return if $session_id.is_a? NilClass
   sleep 0.1
   $subtitle_path = "./docker-grid-selenium4/assets/#{$session_id}/video.srt"
 

@@ -18,3 +18,9 @@ Funcionalidade: Caso de teste de exemplo
     E O usuário se autentica no sistema
     Quando O usuário escrever uma publicação com o texto "oi mundo"
     Então A publicação deve aparecer no feed de notícias do Facebook
+
+  @contas
+  Cenário: Comparar contas exibidas na tela do sistema com os registros em banco
+    Dado O usuário acessa o site de Aprovação Fiscal
+    Quando O usuário se conecta ao banco de dados
+    Então O usuário compara os dados do banco de dados com os exibidos no sistema
