@@ -4,6 +4,9 @@ require 'rspec'
 require 'fileutils'
 require 'site_prism'
 require 'tiny_tds'
+require 'rspec/expectations'
+
+include RSpec::Matchers
 
 ROOT_PATH = '../../'
 
