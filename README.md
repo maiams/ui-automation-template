@@ -9,4 +9,6 @@ Requisitos:
 
 Executando o teste:
 - Instale as gems, com o comando `bundle install` à partir da raiz deste projeto;
-- Execute o comando `cucumber -w`
+- Execute o comando `cucumber -t"@wip"`
+- Pga gerar um relatório com prints, no terminal, execute o comando `ruby .\report_builder.rb`
+- O relatório esta em results/report.html
