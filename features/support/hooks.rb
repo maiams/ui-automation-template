@@ -19,6 +19,7 @@ After do |scenario|
 end
 
 AfterStep do |step|
+  attach page.save_screenshot
   text_step = nil
   if $step_index < $stop_count
     text_step = @scenario.test_steps[$step_index].text

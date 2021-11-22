@@ -5,10 +5,12 @@ require 'fileutils'
 require 'site_prism'
 require 'tiny_tds'
 require 'rspec/expectations'
+require 'capybara-screenshot/cucumber'
+require 'base64'
 
 include RSpec::Matchers
 
-ROOT_PATH = '../../'
+ROOT_PATH = '../..'
 
 Capybara.register_driver :remote do |app|
   Capybara::Selenium::Driver.new(app,
@@ -23,13 +25,13 @@ Capybara.register_driver :remote do |app|
                                  })
 end
 
-Capybara.register_driver :dev do |app|
+Capybara.register_driver :selenium do |app|
   Capybara::Selenium::Driver.new(app, browser: :firefox)
 end
 
 Capybara.configure do |config|
   config.run_server = false
-  config.default_driver = :dev
+  config.default_driver = :selenium
   config.default_max_wait_time = 10
 end
 
